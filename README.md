@@ -1,57 +1,88 @@
-# Project Name
+---
+page_type: sample
+description: An Azure Maps Web SDK module that provides a control that displays a scale bar relative to the pixel resolution at the center of the map.
+languages:
+- javascript
+- typescript
+products:
+- azure
+- azure-maps
+---
 
-(short, 1-3 sentenced, description of the project)
+# Azure Maps Scale Bar Control module
 
-## Features
+An Azure Maps Web SDK module that provides a control that displays a scale bar relative to the pixel resolution at the center of the map.
 
-This project framework provides the following features:
+**Samples**
 
-* Feature 1
-* Feature 2
-* ...
+[Simple Scale Bar Control](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Scale%20Bar%20Control)
+<br/>[<img src="https://github.com/Azure-Samples/AzureMapsCodeSamples/raw/master/AzureMapsCodeSamples/SiteResources/screenshots/Simple-Scale-Bar-Control.jpg" height="200px">](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Scale%20Bar%20Control)
 
-## Getting Started
+## Getting started
 
-### Prerequisites
+Download the project and copy the `azure-maps-scale-bar-control` JavaScript file from the `dist` folder into your project. 
 
-(ideally very short, if any)
+**Usage**
 
-- OS
-- Library version
-- ...
+```JavaScript
+//Add scale bar control to the map.
+map.controls.add(new atlas.control.ScaleBarControl());
+```
 
-### Installation
+## API Reference
 
-(ideally very short)
+### ScaleBarControl class
 
-- npm install [package name]
-- mvn install
-- ...
+Implements: `atlas.Control`
 
-### Quickstart
-(Add steps to get up and running quickly)
+Namespace: `atlas.control`
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+A control that displays a scale bar relative to the pixel resolution at the center of the map.
 
+**Contstructor**
 
-## Demo
+> `ScaleBarControl(options?: ScaleBarControlOptions)`
 
-A demo app is included to show how to use the project.
+### ScaleBarControlOptions interface
 
-To run the demo, follow these steps:
+**Properties** 
 
-(Add steps to start up the demo)
+| Name | Type | Description |
+|------|------|-------------|
+| `maxBarLength` | `number` | The maximum length of the scale bar in pixels. Default: `100` |
+| `units` | `'imperial'` \| `'metric'` \| `'meters'` \| `'kilometers'` \| `'yards'` \| `'feet'` \| `'miles'` \| `'nauticalMiles'` | The distance units of the scale bar. Default: `'imperial'` |
 
-1.
-2.
-3.
+## Related Projects
 
-## Resources
+* [Azure Maps Web SDK Open modules](https://github.com/microsoft/Maps/blob/master/AzureMaps.md#open-web-sdk-modules) - A collection of open source modules that extend the Azure Maps Web SDK.
+* [Azure Maps Web SDK Samples](https://github.com/Azure-Samples/AzureMapsCodeSamples)
+* [Azure Maps Gov Cloud Web SDK Samples](https://github.com/Azure-Samples/AzureMapsGovCloudCodeSamples)
+* [Azure Maps & Azure Active Directory Samples](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples)
+* [List of open-source Azure Maps projects](https://github.com/microsoft/Maps/blob/master/AzureMaps.md)
 
-(Any additional resources or related projects)
+## Additional Resources
 
-- Link to supporting information
-- Link to similar sample
-- ...
+* [Azure Maps (main site)](https://azure.com/maps)
+* [Azure Maps Documentation](https://docs.microsoft.com/azure/azure-maps/index)
+* [Azure Maps Blog](https://azure.microsoft.com/blog/topics/azure-maps/)
+* [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-maps.html)
+* [Azure Maps feedback](https://feedback.azure.com/forums/909172-azure-maps)
+
+## Contributing
+
+We welcome contributions. Feel free to submit code samples, file issues and pull requests on the repo and we'll address them as we can. 
+Learn more about how you can help on our [Contribution Rules & Guidelines](https://github.com/Azure-Samples/azure-maps-scale-bar-control/blob/main/CONTRIBUTING.md). 
+
+You can reach out to us anytime with questions and suggestions using our communities below:
+* [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-maps.html)
+* [Azure Maps feedback](https://feedback.azure.com/forums/909172-azure-maps)
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). 
+For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or 
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## License
+
+MIT
+ 
+See [License](https://github.com/Azure-Samples/azure-maps-scale-bar-control/blob/main/LICENSE.md) for full license text.
