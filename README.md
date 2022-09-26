@@ -15,8 +15,8 @@ An Azure Maps Web SDK module that provides a control that displays a scale bar r
 
 **Samples**
 
-[Simple Scale Bar Control](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Scale%20Bar%20Control)
-<br/>[<img src="https://github.com/Azure-Samples/AzureMapsCodeSamples/raw/master/AzureMapsCodeSamples/SiteResources/screenshots/Simple-Scale-Bar-Control.jpg" height="200px">](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Scale%20Bar%20Control)
+[Simple Scale Bar Control](https://samples.azuremaps.com/?ample=simple-scale-bar-control)
+<br/>[<img src="https://samples.azuremaps.com/controls/simple-scale-bar-control/screenshot.jpg" height="200px">](https://samples.azuremaps.com/?ample=simple-scale-bar-control)
 
 ## Getting started
 

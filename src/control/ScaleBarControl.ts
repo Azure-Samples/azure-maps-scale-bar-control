@@ -98,19 +98,26 @@ export class ScaleBarControl implements azmaps.Control {
 
         //Round the true distance to a nicer number.
         let niceDistance = self._getRoundNumber(trueDistance);
-        let isSmall = false;
+        let isSmall = 0;
         if (niceDistance < 2) {
             units = opt.units.toLowerCase();
             if (units === 'imperial') {
-                //Convert to feet.
-                trueDistance *= 5280;
+                //Convert to yards.
+                trueDistance *= 1760;
                 niceDistance = self._getRoundNumber(trueDistance);
-                isSmall = true;
+                isSmall = 2;
+
+                if(niceDistance < 15) {
+                    //Convert to feet.
+                    trueDistance *= 3;
+                    niceDistance = self._getRoundNumber(trueDistance);
+                    isSmall = 1;
+                }               
             } else if (units === 'metric') {
                 //Convert to meters.
                 trueDistance *= 1000;
                 niceDistance = self._getRoundNumber(trueDistance);
-                isSmall = true;
+                isSmall = 1;
             }
         }
 
@@ -159,7 +166,7 @@ export class ScaleBarControl implements azmaps.Control {
      * @param num The dustance value.
      * @param isSmall Specifies if the number is a small value (meters or feet).
      */
-    private _createDistanceString(num: number, isSmall: boolean): string {
+    private _createDistanceString(num: number, isSmall: number): string {
         if (this._options.units) {
             switch (this._options.units.toLowerCase()) {
                 case 'feet':
@@ -189,13 +196,15 @@ export class ScaleBarControl implements azmaps.Control {
                 case 'yrds':
                     return num + ' yds';
                 case 'metric':
-                    if (isSmall) {
+                    if (isSmall === 1) {
                         return num + ' m';
                     } else {
                         return num + ' km';
                     }
                 case 'imperial':
-                    if (isSmall) {
+                    if (isSmall === 2) {
+                        return num + ' yrds';
+                    } else if (isSmall === 1) {
                         return num + ' ft';
                     } else {
                         return num + ' mi';

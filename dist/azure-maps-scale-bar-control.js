@@ -117,20 +117,26 @@ MIT License
                 var trueDistance = azmaps.math.getDistanceTo(pos[0], pos[1], units);
                 //Round the true distance to a nicer number.
                 var niceDistance = self._getRoundNumber(trueDistance);
-                var isSmall = false;
+                var isSmall = 0;
                 if (niceDistance < 2) {
                     units = opt.units.toLowerCase();
                     if (units === 'imperial') {
-                        //Convert to feet.
-                        trueDistance *= 5280;
+                        //Convert to yards.
+                        trueDistance *= 1760;
                         niceDistance = self._getRoundNumber(trueDistance);
-                        isSmall = true;
+                        isSmall = 2;
+                        if (niceDistance < 15) {
+                            //Convert to feet.
+                            trueDistance *= 3;
+                            niceDistance = self._getRoundNumber(trueDistance);
+                            isSmall = 1;
+                        }
                     }
                     else if (units === 'metric') {
                         //Convert to meters.
                         trueDistance *= 1000;
                         niceDistance = self._getRoundNumber(trueDistance);
-                        isSmall = true;
+                        isSmall = 1;
                     }
                 }
                 //Calculate the distanceRatio between the true and nice distances and scale the scalebar size accordingly.
@@ -242,14 +248,17 @@ MIT License
                     case 'yrds':
                         return num + ' yds';
                     case 'metric':
-                        if (isSmall) {
+                        if (isSmall === 1) {
                             return num + ' m';
                         }
                         else {
                             return num + ' km';
                         }
                     case 'imperial':
-                        if (isSmall) {
+                        if (isSmall === 2) {
+                            return num + ' yrds';
+                        }
+                        else if (isSmall === 1) {
                             return num + ' ft';
                         }
                         else {
