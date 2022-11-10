@@ -80,7 +80,7 @@ export class ScaleBarControl implements azmaps.Control {
         const opt = self._options;
 
         //Get the center pixel.
-        const cp = self._map.pixelsToPositions([camera.center]);
+        const cp = self._map.positionsToPixels([camera.center]);
 
         //Calculate two coordinates that are seperated by the maxBarLength pixel distance from the center pixel.
         const pos = self._map.pixelsToPositions([[0, cp[0][1]], [opt.maxBarLength, cp[0][1]]]);

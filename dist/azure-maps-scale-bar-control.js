@@ -103,7 +103,7 @@ MIT License
                 var camera = self._map.getCamera();
                 var opt = self._options;
                 //Get the center pixel.
-                var cp = self._map.pixelsToPositions([camera.center]);
+                var cp = self._map.positionsToPixels([camera.center]);
                 //Calculate two coordinates that are seperated by the maxBarLength pixel distance from the center pixel.
                 var pos = self._map.pixelsToPositions([[0, cp[0][1]], [opt.maxBarLength, cp[0][1]]]);
                 //Calculate the strightline distance between the positions.
