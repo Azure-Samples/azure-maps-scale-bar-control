@@ -9,6 +9,8 @@ products:
 - azure-maps
 ---
 
+**This is now built into Azure Maps Web SDK under [atlas.control.ScaleControl](https://learn.microsoft.com/en-us/javascript/api/azure-maps-control/atlas.control.scalecontrol?view=azure-maps-typescript-latest)**
+
 # Azure Maps Scale Bar Control module
 
 An Azure Maps Web SDK module that provides a control that displays a scale bar relative to the pixel resolution at the center of the map.
